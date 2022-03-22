@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--REGISTER: IF USER DOES NOT HAVE AN ACCOUNT-->
+<html lang = 'en'>
+<head>
+    <title>Sign Up</title>
+    <script src="./coolApp.js" defer></script>
+    <meta charset = 'UTF-8'>
+    <meta name = "viewport" content = "width=device-width , initial-scale =1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff9e3;
+        }
+        h1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;;
+            color: blue;
+        }
+        h3 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        input{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 50%;
+        }
+        button#register{
+            background-color: white; 
+            padding: 10px 30px;
+            border: 2px solid #111;
+            transition-duration: 0.5s;
+            font-weight: bold;
+
+        }
+        button#register:hover{
+            background-color: black;
+            border: 2px solid #ff96ad;
+            color:#ff96ad;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <form action = 'http://localhost:8080/testPage' method = 'POST'>
+        <div class="w3-display-middle">
+            <h1 class="w3-jumbo w3-animate-top">CHINA TASTE 2</h1>
+            <hr class="w3-border-grey" style="margin:auto;width:40%">
+            <div id = 'signup'>
+                <h3>Create Account</h3>
+                <hr class="w3-border-grey" style="margin:auto;width:40%">
+
+                <h5>First Name</h5>
+                <input type = 'text' name = 'firstName' placeholder = 'First Name' id = 'firstName' required>
+                
+                <h5>Last Name</h5>
+                <input type = 'text' name = 'lastName' placeholder = 'Last Name' id = 'lastName' required>
+
+                <h5>Email</h5>
+                <input type = 'email' name = 'email' placeholder = 'Email' id = 'email' required>
+
+                <h5>Create Password</h5>
+                <input type = 'password' name = 'password' placeholder = 'Password' id = "Password" required>
+
+            
+                <br /><br /> <button type = 'submit' id = 'register' onclick = 'writeToJSON()' >Register Account</button>
+                
+                <ul>
+                    <li><a href = './'>Already Have an Account?</a></li>
+                </ul>
+            </div>
+        </div>
+    </form>
+    <script>
+        function writeToJSON(fName, lName, email, password){
+            fName.firname = document.getElementById("firstName").value;
+            lName.lasname = document.getElementById("lastName").value;
+            email.eEmail = document.getElementById("email").value;
+            password.pswd = document.getElementById("password").value;
+        }
+    </script>
+</body>
+</html>
